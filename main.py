@@ -15,7 +15,7 @@ async def upload_file(file: UploadFile = File(...)):
 
     # Validar la extensión del archivo
     if file_extension not in ALLOWED_EXTENSIONS:
-        raise HTTPException(status_code=400, detail="File type not allowed. Only .xlsx and .csv are accepted.")
+        raise HTTPException(status_code=400, detail="El archivo no es valido. Solo se acepta .xlsx y .csv.")
 
     file_path = os.path.join(UPLOAD_FOLDER, file.filename)
     with open(file_path, "wb") as f:
@@ -30,7 +30,7 @@ async def upload_file(file: UploadFile = File(...)):
 
     # Validar la extensión del archivo
     if file_extension not in ALLOWED_EXTENSIONS:
-        raise HTTPException(status_code=400, detail="File type not allowed. Only .xlsx and .csv are accepted.")
+        raise HTTPException(status_code=400, detail="El archivo no es valido. Solo se acepta .xlsx y .csv.")
 
     # Guardar el archivo si es válido
     file_path = os.path.join(UPLOAD_FOLDER, file.filename)

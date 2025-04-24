@@ -12,11 +12,11 @@ form.addEventListener('submit', async (event) => {
 
         if (!response.ok) {
             const error = await response.json();
-            throw new Error(error.detail || 'Upload failed.');
+            throw new Error(error.detail || 'Carga fallida.');
         }
 
         const data = await response.json();
-        responseDisplay.textContent = `File uploaded successfully: ${data.filename}`;
+        responseDisplay.textContent = `Archivo cargado exitosamente: ${data.filename}`;
     } catch (error) {
         responseDisplay.textContent = `Error: ${error.message}`;
         responseDisplay.style.color = 'red'; // Cambiar a rojo para errores
